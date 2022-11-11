@@ -45,43 +45,72 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 
 4-bit Count Down Counter
-### Procedure
-/* write all the steps invloved */
+### Procedure:
+```
+
+1.Create module projectname(input ,output) to start the verilog programming.
+2.create a if loop condition to increase the count in counter_up function.
+3.Similarly, create another loop for the down counter.
+4.End the verilog program using keyword endmodule.
+5.Get the timing diagram and RTL realization diagram for respective Counters.
+```
 
 
-
-### PROGRAM 
-/*
+### PROGRAM :
+```
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: SOUVIK KUNDU 
+RegisterNumber:  212221230105
+
+ # UP COUNTER:
+
+module now(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_up <=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+
+ # DOWN COUNTER:
+
+module dc(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_down <=4'd0;
+else
+counter_down<=counter_down+4'd1;
+end
+assign counter=counter_down;
+endmodule
+
+```
+
+# Output:
+
+### RTL LOGIC UP COUNTER AND DOWN COUNTER  :
+![OUTPUT](1.png)
+
+![OUTPUT](2.png)
 
 
+### TIMING DIGRAMS FOR COUNTER  :
 
+![OUTPUT](3.png)
 
+![OUTPUT](4.png)
 
+### TRUTH TABLE :
 
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+![OUTPUT](5.png)
 
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
+![OUTPUT](6.png)
 
 
 
